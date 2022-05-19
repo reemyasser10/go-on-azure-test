@@ -34,8 +34,8 @@ func main() {
 	signaler := signaler.NewSignaler(turn)
 	wsServer := websocket.NewWebSocketServer(signaler.HandleNewWebSocket, signaler.HandleTurnServerCredentials)
 
-	//sslCert := cfg.Section("general").Key("cert").String()
-	//sslKey := cfg.Section("general").Key("key").String()
+	sslCert := cfg.Section("general").Key("cert").String()
+	sslKey := cfg.Section("general").Key("key").String()
 	bindAddress := cfg.Section("general").Key("bind").String()
 
 	port, err := cfg.Section("general").Key("port").Int()
@@ -48,8 +48,8 @@ func main() {
 	config := websocket.DefaultConfig()
 	config.Host = bindAddress
 	config.Port = port
-	//config.CertFile = sslCert
-	//config.KeyFile = sslKey
+	config.CertFile = sslCert
+	config.KeyFile = sslKey
 	config.HTMLRoot = htmlRoot
 
 	wsServer.Bind(config)
