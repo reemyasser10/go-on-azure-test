@@ -15,7 +15,7 @@ import (
 	"github.com/reemyasser10/go-on-azure-test/pkg/logger"
 	"github.com/reemyasser10/go-on-azure-test/pkg/turn"
 	"github.com/reemyasser10/go-on-azure-test/pkg/util"
-	"github.com/reemyasser10/go-on-azure-testgithub.com/flutter-webrtc/flutter-webrtc-server/pkg/websocket"
+	"github.com/reemyasser10/go-on-azure-test/pkg/websocket"
 )
 
 const (
