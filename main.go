@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,5 +16,10 @@ func main() {
 		})
 	})
 
-	router.Run("127.0.0.1:8080")
+	port := os.Getenv("HTTP_PLATFORM_PORT")
+
+	if port == "" {
+		port = "8080"
+	}
+	router.Run("127.0.0.1" + port)
 }
