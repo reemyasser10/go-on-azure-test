@@ -3,9 +3,7 @@ name: Build Go app and push to Azure
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+ 
 jobs:
 
   build:
